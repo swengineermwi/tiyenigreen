@@ -135,11 +135,63 @@ p {
 }
 
 .scroll-spacer {
+  position: relative;
   background: transparent;
   border: none;
   box-shadow: none;
   backdrop-filter: none;
   padding: 0;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: clamp(1.5rem, 5vw, 3rem);
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(245, 255, 224, 0.82);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.scroll-cue::after {
+  content: '';
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  animation: scroll-cue-bounce 1.6s ease-in-out infinite;
+}
+
+.scroll-cue:focus-visible {
+  outline: 2px solid rgba(204, 255, 172, 0.95);
+  outline-offset: 0.45rem;
+  border-radius: 999px;
+}
+
+@keyframes scroll-cue-bounce {
+  0%,
+  100% {
+    opacity: 0.35;
+    translate: 0 -2px;
+  }
+
+  50% {
+    opacity: 1;
+    translate: 0 5px;
+  }
 }
 
 .intro-section {
@@ -606,5 +658,9 @@ p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .scroll-cue::after {
+    animation: none;
   }
 }
