@@ -92,6 +92,7 @@ p {
 
 .scroll-section {
   width: 100%;
+  flex: 0 0 auto;
   min-height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -555,8 +556,39 @@ p {
 }
 
 @media (max-width: 700px) {
+  .scroll-area {
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
   .scroll-section {
+    min-height: 100dvh;
+    height: auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    justify-content: flex-start;
     padding: clamp(1.5rem, 8vw, 2.5rem);
+    backdrop-filter: blur(8px);
+  }
+
+  .scroll-spacer {
+    display: flex;
+    min-height: 100dvh;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .logo-wrapper {
+    position: fixed;
+    inset: 0;
   }
 
   .step-item {
