@@ -164,6 +164,13 @@ logoWrapper.appendChild(logo);
 
 const scrollArea = createEl('section', { className: 'scroll-area' });
 const spacer = createEl('section', { className: 'scroll-section scroll-spacer' });
+const scrollCue = createEl('button', {
+  className: 'scroll-cue',
+  text: 'Scroll',
+  attrs: { type: 'button', 'aria-label': 'Scroll to introduction' },
+});
+scrollCue.addEventListener('click', () => scrollToTarget('#about'));
+spacer.appendChild(scrollCue);
 scrollArea.appendChild(spacer);
 
 const heroSection = createEl('article', { className: 'scroll-section intro-section', id: 'about' });
