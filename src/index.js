@@ -298,13 +298,13 @@ contactInfo.append(
   }),
   createEl('a', {
     className: 'contact-link',
-    text: 'Email hello@tiyenigreen.com',
-    attrs: { href: 'mailto:hello@tiyenigreen.com' },
+    text: 'Email hello@tiyeni.green',
+    attrs: { href: 'mailto:hello@tiyeni.green' },
   }),
   createEl('a', {
     className: 'contact-link',
-    text: 'WhatsApp +260 97 123 4567',
-    attrs: { href: 'https://wa.me/260971234567', target: '_blank', rel: 'noreferrer' },
+    text: 'WhatsApp 0963454336',
+    attrs: { href: 'https://wa.me/260963454336', target: '_blank', rel: 'noreferrer' },
   })
 );
 
